@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReduxTrial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="6td-t9-utf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wqb-3K-7sf" customClass="VerticallyCenteredTextView" customModule="ReduxTrial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o2A-2T-R90">
+                                        <rect key="frame" x="0.0" y="447" width="375" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xE-Ln-TJJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="200"/>
+                                                <color key="backgroundColor" red="0.28908280279367993" green="1" blue="0.58572540444562438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="72"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="userClickedPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QLi-c4-bt0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3z-yg-Rq1">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="200"/>
+                                                <color key="backgroundColor" red="1" green="0.49625277519226074" blue="0.38615202903747559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="72"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="userClickedMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="un0-ho-b7O"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="lqf-aJ-5z1"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="o2A-2T-R90" firstAttribute="leading" secondItem="6td-t9-utf" secondAttribute="leading" id="1A0-qm-SD2"/>
+                                    <constraint firstAttribute="trailing" secondItem="o2A-2T-R90" secondAttribute="trailing" id="F8g-Lj-Ah2"/>
+                                    <constraint firstItem="wqb-3K-7sf" firstAttribute="leading" secondItem="6td-t9-utf" secondAttribute="leading" id="RQo-N7-aJh"/>
+                                    <constraint firstAttribute="bottom" secondItem="o2A-2T-R90" secondAttribute="bottom" id="Wn6-NE-5hH"/>
+                                    <constraint firstAttribute="trailing" secondItem="wqb-3K-7sf" secondAttribute="trailing" id="wwB-gN-8yl"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6td-t9-utf" secondAttribute="bottom" id="Gbj-f5-vYB"/>
+                            <constraint firstItem="6td-t9-utf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K34-Ae-Tca"/>
+                            <constraint firstItem="6td-t9-utf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NO8-Sw-EuD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6td-t9-utf" secondAttribute="trailing" id="peC-3v-UgO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="counterTextView" destination="wqb-3K-7sf" id="Ylj-cR-W03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

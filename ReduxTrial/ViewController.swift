@@ -8,18 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, StoreSubscriber {
+    
+    @IBOutlet weak var counterTextView: VerticallyCenteredTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // adds ViewController as new subsriber, allows for state updates
+        appStore.subscribe(self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func userClickedPlus(_ sender: Any) {
+        appStore.dispatch(action: IncreaseAction(increaseBy: 1))
     }
-
-
+    
+    @IBAction func userClickedMinus(_ sender: Any) {
+        appStore.dispatch(action: DecreaseAction(decreaseBy: 1))
+    }
+    
+    // called upon state update
+    func newState(state: State) {
+        counterTextView.text = "\((state as? AppState)?.counter ?? 0)"
+    }
 }
-
