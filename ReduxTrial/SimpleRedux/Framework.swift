@@ -52,7 +52,7 @@ class Store {
 // TODO: Find a way to make this typed language print state's properties like JS, current implementation would only give property names, not values
 extension State where Self: ViewController {
     func jsStyleDescription() -> String {
-        let properties = Mirror(reflecting: self).children.flatMap { $0.label }
+        let properties = Mirror(reflecting: self).children.compactMap { $0.label }
         return properties.reduce("") { $0 + "\n" + $1 }
     }
 }

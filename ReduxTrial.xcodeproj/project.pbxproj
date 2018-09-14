@@ -62,11 +62,10 @@
 		8897C4EF204498C600B974AB /* ReduxTrial */ = {
 			isa = PBXGroup;
 			children = (
-				8897C50920449FCA00B974AB /* SimplifiedReduxFramework */,
 				8897C4F0204498C600B974AB /* AppDelegate.swift */,
 				8897C4F2204498C600B974AB /* ViewController.swift */,
 				8897C51A2044BDB900B974AB /* VerticallyCenteredTextView.swift */,
-				8897C50620449C6F00B974AB /* ReduxImplementation */,
+				8897C50620449C6F00B974AB /* SimpleRedux */,
 				8897C4F4204498C600B974AB /* Main.storyboard */,
 				8897C4F7204498C600B974AB /* Assets.xcassets */,
 				8897C4F9204498C600B974AB /* LaunchScreen.storyboard */,
@@ -75,21 +74,14 @@
 			path = ReduxTrial;
 			sourceTree = "<group>";
 		};
-		8897C50620449C6F00B974AB /* ReduxImplementation */ = {
-			isa = PBXGroup;
-			children = (
-				8897C50420449BD100B974AB /* AppStore.swift */,
-				8897C50720449C9F00B974AB /* AppActions.swift */,
-			);
-			path = ReduxImplementation;
-			sourceTree = "<group>";
-		};
-		8897C50920449FCA00B974AB /* SimplifiedReduxFramework */ = {
+		8897C50620449C6F00B974AB /* SimpleRedux */ = {
 			isa = PBXGroup;
 			children = (
 				8897C502204498E100B974AB /* Framework.swift */,
+				8897C50420449BD100B974AB /* AppStore.swift */,
+				8897C50720449C9F00B974AB /* AppActions.swift */,
 			);
-			path = SimplifiedReduxFramework;
+			path = SimpleRedux;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +111,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Andy Palka";
 				TargetAttributes = {
 					8897C4EC204498C600B974AB = {
@@ -209,6 +201,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -216,6 +209,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -266,6 +260,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -273,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
