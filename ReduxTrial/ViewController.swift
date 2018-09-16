@@ -8,26 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController, StoreSubscriber {
+class ViewController: UIViewController, Subscriber {
     
     @IBOutlet weak var counterTextView: VerticallyCenteredTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // adds ViewController as new subsriber, allows for state updates
-        appStore.subscribe(self)
+        Store.subscribe(self, selector: {(newState: State, oldState: State) -> Bool in
+            //change for custom inequality function
+            return oldState.counter != newState.counter
+        }, callback: { state in
+            self.counterTextView.text = String(state.counter)
+            })
     }
     
     @IBAction func userClickedPlus(_ sender: Any) {
-        appStore.dispatch(action: IncreaseAction(increaseBy: 1))
+        Store.dispatch(action: IncreaseByOneAction())
     }
     
     @IBAction func userClickedMinus(_ sender: Any) {
-        appStore.dispatch(action: DecreaseAction(decreaseBy: 1))
-    }
-    
-    // called upon state update
-    func newState(state: State) {
-        counterTextView.text = "\((state as? AppState)?.counter ?? 0)"
+        Store.dispatch(action: DecreaseByOneAction())
     }
 }

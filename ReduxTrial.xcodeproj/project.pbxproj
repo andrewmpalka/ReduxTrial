@@ -12,10 +12,11 @@
 		8897C4F6204498C600B974AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8897C4F4204498C600B974AB /* Main.storyboard */; };
 		8897C4F8204498C600B974AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8897C4F7204498C600B974AB /* Assets.xcassets */; };
 		8897C4FB204498C600B974AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8897C4F9204498C600B974AB /* LaunchScreen.storyboard */; };
-		8897C503204498E100B974AB /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C502204498E100B974AB /* Framework.swift */; };
-		8897C50520449BD100B974AB /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C50420449BD100B974AB /* AppStore.swift */; };
-		8897C50820449C9F00B974AB /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C50720449C9F00B974AB /* AppActions.swift */; };
+		8897C503204498E100B974AB /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C502204498E100B974AB /* Redux.swift */; };
+		8897C50520449BD100B974AB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C50420449BD100B974AB /* Store.swift */; };
+		8897C50820449C9F00B974AB /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C50720449C9F00B974AB /* Actions.swift */; };
 		8897C51B2044BDB900B974AB /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897C51A2044BDB900B974AB /* VerticallyCenteredTextView.swift */; };
+		C07F7913214C57F600D09FF6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F7912214C57F600D09FF6 /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		8897C4F7204498C600B974AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8897C4FA204498C600B974AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8897C4FC204498C600B974AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8897C502204498E100B974AB /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
-		8897C50420449BD100B974AB /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
-		8897C50720449C9F00B974AB /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		8897C502204498E100B974AB /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
+		8897C50420449BD100B974AB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		8897C50720449C9F00B974AB /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		8897C51A2044BDB900B974AB /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
+		C07F7912214C57F600D09FF6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,10 @@
 		8897C4EF204498C600B974AB /* ReduxTrial */ = {
 			isa = PBXGroup;
 			children = (
+				C058567C214C52F5001A2DFB /* Redux */,
 				8897C4F0204498C600B974AB /* AppDelegate.swift */,
 				8897C4F2204498C600B974AB /* ViewController.swift */,
 				8897C51A2044BDB900B974AB /* VerticallyCenteredTextView.swift */,
-				8897C50620449C6F00B974AB /* SimpleRedux */,
 				8897C4F4204498C600B974AB /* Main.storyboard */,
 				8897C4F7204498C600B974AB /* Assets.xcassets */,
 				8897C4F9204498C600B974AB /* LaunchScreen.storyboard */,
@@ -74,14 +76,15 @@
 			path = ReduxTrial;
 			sourceTree = "<group>";
 		};
-		8897C50620449C6F00B974AB /* SimpleRedux */ = {
+		C058567C214C52F5001A2DFB /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				8897C502204498E100B974AB /* Framework.swift */,
-				8897C50420449BD100B974AB /* AppStore.swift */,
-				8897C50720449C9F00B974AB /* AppActions.swift */,
+				8897C502204498E100B974AB /* Redux.swift */,
+				8897C50420449BD100B974AB /* Store.swift */,
+				8897C50720449C9F00B974AB /* Actions.swift */,
+				C07F7912214C57F600D09FF6 /* State.swift */,
 			);
-			path = SimpleRedux;
+			name = Redux;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,11 +160,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8897C51B2044BDB900B974AB /* VerticallyCenteredTextView.swift in Sources */,
-				8897C50820449C9F00B974AB /* AppActions.swift in Sources */,
-				8897C50520449BD100B974AB /* AppStore.swift in Sources */,
+				8897C50820449C9F00B974AB /* Actions.swift in Sources */,
+				8897C50520449BD100B974AB /* Store.swift in Sources */,
 				8897C4F3204498C600B974AB /* ViewController.swift in Sources */,
 				8897C4F1204498C600B974AB /* AppDelegate.swift in Sources */,
-				8897C503204498E100B974AB /* Framework.swift in Sources */,
+				C07F7913214C57F600D09FF6 /* State.swift in Sources */,
+				8897C503204498E100B974AB /* Redux.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
